@@ -1,0 +1,91 @@
+% !TEX program = xelatex
+\documentclass[12pt,a4paper]{report}
+% \usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{fontspec}
+\usepackage{url}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\renewcommand\UrlFont{\ttfamilylatin}
+\usepackage{xltxtra} 
+
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip = 0pt plus 1pt   %
+
+
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage[top=0.5in, bottom=0.5in, left=1in, right=1in]{geometry}
+\newfontfamily\thaifont[Script=Thai]{Laksaman}
+
+\setmainfont{Laksaman}
+\usepackage{polyglossia}
+
+\setdefaultlanguage{thai}
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+\title{การซ่อมและบำรุงรักษาคอมพิวเตอร์}
+\author{นายชนกันต์ มุ่งถิ่น}
+\date{วันที่}
+
+\renewcommand{\normalsize}{\fontsize{12pt}{24pt}\selectfont}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries\centering}{\chaptertitlename \thechapter}{12pt}{\LARGE}
+\titleformat{\section}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+\pagenumbering{gobble}
+
+
+{\Large \textbf{รายงาน}}\\[0.5cm]
+{\Large \textbf{เรื่อง \thetitle}}\\[2cm]
+{\Large \textbf{จัดทำโดย}}\\[0.5cm]
+{\Large \textbf{\theauthor}}\\[0.2cm]
+{\Large \textbf{ชั้น ปวช.2/1 เลขที่ 10}}\\[2cm]
+{\Large \textbf{เสนอ}}\\[0.5cm]
+{\Large \textbf{ครูเอกชัย สบายจิตร}}\\[1.8cm]
+{\Large \textbf{รายงานนี้เป็นส่วนหนึ่งของรายวิชา\\[0.5cm] การซ่อมและบำรุงรักษาคอมพิวเตอร์}}\\[1cm]
+{\Large \textbf{ภาคเรียนที่ 2 ปีการศึกษา 2565}}\\[0.5cm]
+{\Large \textbf{โรงเรียนจิตรลดาวิชาชีพ สถาบันเทคโนโลยีจิตรลดา}}
+
+\end{center}
+\end{titlepage}
+
+
+\chapter{บทนำ}
+
+\section{หลักการและเหตุผล}
+เวลาที่เจอปัญหาร่างกายต่างๆ อย่างเช่น นอนตื่นมาแล้วพบว่า เท้ามีอาการบวมแดง
+และมีแผลพุพอง ทำให้ต้องไปโรงพยาบาล ซึ่งบางครั้งนั้น ก็เป็นไปได้อย่างยากลำบากมาก
+ทั้งเรื่องเส้นทาง และเวลาในการรอพบหมอ ที่บางครั้งนั้นจำเป็นต้องมีการรอ 3-4 ชั่วโมง แล้วคุยเพียงแค่ 10 นาที เพื่อที่จะได้คำตอบมาว่า "อ๋อ คุณโดนแมลงก้นกระดกกัด กินยาแก้อักเสบแผงเดียวก็หายแล้ว" โดยเป็นปัญหาที่มักเกิดจากจำนวนคนในโรงพยาบาลที่เยอะมาก ในขณะที่หมอที่รับผิดชอบนั้นมีจำนวนน้อย
+โดยถ้าหากรู้ว่า ไม่มีความจำเป็นจะต้องมาถึงโรงพยาบาล ก็คงจะประหยัดเวลาไปได้เยอะพอสมควร
+
+ในปัจจุบันนั้น ยังคงเป็นปัญหาที่้เกิดขึ้นบ่อยครัง ภายในโรงพยาบาลที่มีผู้รับผิดชอบไม่เพียงพอ หรือคลินิกเล็กๆ อย่างการที่คลินิกมีมักมีผู้รับผิดชอบน้อย อาทิเช่น หนึ่งหรือสองคน จีงทำให้เป็นปัญหาเมื่อมีผู้คนที่มีความต้องการจะพบหมอ เพื่อปรึกษา หรือสอบถามอาการที่พบเจออยู่
+
+โดยได้สังเกตว่า ถ้ามีแพลตฟอร์มที่เราสามารถติดต่อกับหมอได้โดยตรง หรือค้นหาโรงพยาบาล หรือคลินิก ที่ใกล้เราได้อย่างง่ายดาย โดยที่มีข้อมูลเกี่ยวกับคลินิก หรือโรงพยาบาลนั้นๆ ว่าเปิดอยู่หรือไม่ คลินิกนั้นๆ รับรักษาด้านอะไรบ้าง รวมถึงระบบที่เราสามารถนัดจองผ่านเว็บไซต์ได้เลย โดยไม่จำเป็นต้องมีการเดินทางไปยังคลินิก หรือโรงพยาบาล หรือการโทรสอบถาม ที่จำเป็นจะต้องมีการสอบถามข้อมูลคลินิก หรือโรงพยาบาล อย่างมากมาย อาทิเช่น เวลาเปิด หรือ รับรักษาอะไรบ้าง เป็นต้น
+
+ด้วยเหตุผลดังกล่าวนี้ จึงมีแนวคิดในการจัดทำโครงการหมอแมพ โดยเป็นเว็บไซต์ที่อนุญาตให้ผู้คนที่ต้องการค้นหาโรงพยาบาลที่ใกล้ตัว และรู้สถานะของโรงพยาบาลได้ทันที พร้อมกับสามารถนัดคุยกันได้เลย เพื่อที่จะลดความแออัดภายในโรงพยาบาลลง
+และทางฝั่งโรงพยาบาลก็สามารถที่จะตั้งสถานะตัวเอง ว่าเปิดหรือปิด รวมถึงสามารถบอกรายละเอียดต่างๆเกี่ยวกับโรงพยาบาลได้ทันที
+
+
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+\end{document}
+
